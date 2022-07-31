@@ -1,6 +1,7 @@
 <script setup>
 import Hero from "../components/Hero.vue";
 import Projects from "../components/Projects.vue";
+import Articles from "../components/Articles.vue";
 </script>
 
 <template>
@@ -10,6 +11,9 @@ import Projects from "../components/Projects.vue";
     </div>
     <main class="main-content">
       <Projects />
+        <Articles />
+      <div class="articles sticky">
+      </div>
     </main>
   </div>
 </template>
@@ -22,12 +26,19 @@ import Projects from "../components/Projects.vue";
   top: 0;
   width: 100%;
   height: 100%;
-  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1) 
+  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .main-content {
   background: var(--color-background);
   min-height: 100vh;
+  padding: 55px 12px;
 }
+/* .sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100%;
+} */
 @media only screen and (min-width: 1150px) {
   .hero-section {
     width: 40%;

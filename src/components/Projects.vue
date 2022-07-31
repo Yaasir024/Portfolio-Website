@@ -2,29 +2,30 @@
 import { ref, reactive } from "vue";
 const projects = reactive([
   {
-    title: "Rock Paper Scissors Game",
-    img: "../assets/konoha.PNG",
-    about: "A simple game made with Vue 3 Composition Api.",
+    title: "Rock Paper Scissors",
+    img: "rps.PNG",
+    about:
+      "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,and more. Available on Visual Studio Marketplace, Package Control,Atom Package Manager, and npm.",
     github: "https://github.com/Yaasir024/Rock-Paper-Scissors-Game",
     website: "https://rockpaperscissorsbyyaasir.netlify.app/",
   },
   {
     title: "Apple Website Clone",
-    img: "../assets/konoha.PNG",
-    about: "A simple game made with Vue 3 Composition Api.",
+    img: "appleclone.PNG",
+    about: "A simple Clone of The front Page of Apple Website(UK).",
     github: "https://github.com/Yaasir024/Apple-clone",
     website: "https://appleclonebyyaasir.netlify.app/",
   },
   {
     title: "Movies Search App",
-    img: "../assets/konoha.PNG",
+    img: "konoha.PNG",
     about: "A simple game made with Vue 3 Composition Api.",
     github: "https://github.com/Yaasir024/MoviesApp",
     website: "https://moviezapp.netlify.app/",
   },
   {
     title: "Hotel Landing Page",
-    img: "../assets/konoha.PNG",
+    img: "moviesapp.PNG",
     about: "A simple game made with Vue 3 Composition Api.",
     github: "https://github.com/Yaasir024/konoha-hotel",
     website: "https://konohahotel.netlify.app/",
@@ -35,21 +36,23 @@ const projects = reactive([
 <template>
   <section class="projects-section">
     <ul class="projects-container">
-      <li class="project-card">
+      <li
+        class="project-card"
+        v-for="(project, index) in projects"
+        :key="index"
+      >
         <div class="card-content">
           <h3 class="project-title">
-            <a href="#" target="_blank">KONOHA HOTEL PAGE</a>
+            <a href="#" target="_blank">{{ project.title }}</a>
           </h3>
           <div class="project-description">
             <p>
-              A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,
-              and more. Available on Visual Studio Marketplace, Package Control,
-              Atom Package Manager, and npm.
+              {{ project.about }}
             </p>
           </div>
           <div class="project-links">
             <a
-              href="https://github.com/bchiang7/halcyon-site"
+              :href="`${project.github}`"
               aria-label="GitHub Link"
               target="_blank"
               ><svg
@@ -70,7 +73,7 @@ const projects = reactive([
               </svg>
             </a>
             <a
-              href="https://halcyon-theme.netlify.com/"
+              :href="`${project.website}`"
               aria-label="External Link"
               class="external"
               rel="noopener noreferrer"
@@ -98,76 +101,8 @@ const projects = reactive([
           </div>
         </div>
         <div class="project-image">
-          <a href="#">
-            <img src="../assets/portfoliopic.PNG" alt="" />
-          </a>
-        </div>
-      </li>
-      <li class="project-card">
-        <div class="card-content">
-          <h3 class="project-title">
-            <a href="#" target="_blank">KONOHA HOTEL PAGE</a>
-          </h3>
-          <div class="project-description">
-            <p>
-              A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,
-              and more. Available on Visual Studio Marketplace, Package Control,
-              Atom Package Manager, and npm.
-            </p>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/bchiang7/halcyon-site"
-              aria-label="GitHub Link"
-              target="_blank"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github"
-              >
-                <title>GitHub</title>
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="https://halcyon-theme.netlify.com/"
-              aria-label="External Link"
-              class="external"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-external-link"
-              >
-                <title>External Link</title>
-                <path
-                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                ></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-image">
-          <a href="#">
-            <img src="../assets/konoha.PNG" alt="" />
+          <a :href="`${project.website}`">
+            <img :src="'/src/assets/projects/' + project.img" alt="" />
           </a>
         </div>
       </li>
@@ -179,6 +114,9 @@ const projects = reactive([
 .projects-section {
   padding: 55px 12px;
   width: 100%;
+  /* position: sticky;
+  top: 0;
+  height: 100%; */
 }
 .projects-container {
   list-style: none;
@@ -192,7 +130,7 @@ const projects = reactive([
   grid-template-columns: repeat(12, 1fr);
   -webkit-box-align: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 75px;
 }
 .project-card .card-content {
   grid-column: 1 / 9;
@@ -265,6 +203,7 @@ const projects = reactive([
   overflow: hidden;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: all 0.3s ease;
+  background: beige;
 }
 .project-image:hover {
   transform: scale(1.02);
@@ -274,5 +213,25 @@ const projects = reactive([
   width: 100%;
   height: 100%;
   vertical-align: middle;
+  mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1);
+}
+@media only screen and (max-width: 1150px) {
+  .projects-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .project-card .card-content {
+    grid-column: 1 / -1 !important;
+  }
+  .project-card .project-image {
+    grid-column: 1 / -1 !important;
+  }
+  .project-description {
+  background: transparent;
+}
 }
 </style>

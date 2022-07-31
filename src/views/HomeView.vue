@@ -15,15 +15,30 @@ import Projects from "../components/Projects.vue";
 </template>
 <style scoped>
 .main {
-  display: flex;
+  /* display: flex; */
 }
 .hero-section {
-  max-width: 496px;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1) 
 }
 .main-content {
-  position: absolute;
-  right: 0;
-  max-width: 535px;
+  background: var(--color-background);
+  min-height: 100vh;
+}
+@media only screen and (min-width: 1150px) {
+  .hero-section {
+    width: 40%;
+    position: fixed;
+    left: 0;
+    transition: width 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+    z-index: 3;
+  }
+  .main-content {
+    width: 60%;
+    margin-left: 40%;
+  }
 }
 </style>

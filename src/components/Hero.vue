@@ -35,6 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: var(--color-background-mute);
 }
 .hero .top .details {
   padding-top: 20px;

@@ -213,8 +213,8 @@ const projects = reactive([
   width: 100%;
   height: 100%;
   vertical-align: middle;
-  mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1);
+  /* mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1); */
 }
 @media only screen and (max-width: 1150px) {
   .projects-container {

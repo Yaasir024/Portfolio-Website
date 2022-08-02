@@ -44,6 +44,7 @@ const projects = reactive([
   <section class="projects-section">
     <div class="header">
       <span>Personal Projects</span>
+      <div class="divider"></div>
     </div>
     <ul class="projects-container">
       <li
@@ -53,7 +54,9 @@ const projects = reactive([
       >
         <div class="card-content">
           <h3 class="project-title">
-            <a :href="`${project.website}`" target="_blank">{{ project.title }}</a>
+            <a :href="`${project.website}`" target="_blank">{{
+              project.title
+            }}</a>
           </h3>
           <div class="project-description">
             <p>
@@ -112,7 +115,10 @@ const projects = reactive([
         </div>
         <div class="project-image">
           <a :href="`${project.website}`">
-            <img :src="'/src/assets/projects/' + project.img" :alt="`${project.title}` + ' by Yaasir'" />
+            <img
+              :src="'/src/assets/projects/' + project.img"
+              :alt="`${project.title}` + ' by Yaasir'"
+            />
           </a>
         </div>
       </li>
@@ -126,7 +132,20 @@ const projects = reactive([
   width: 100%;
 }
 .header {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 40px;
+}
+.divider{
+  border-top: 1px solid var(--color-text-secondary);
+  width: 62%;
+}
+.header span{
+  font-size: 30px;
+  font-weight: 600;
 }
 .projects-container {
   list-style: none;

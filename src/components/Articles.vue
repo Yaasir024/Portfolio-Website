@@ -10,6 +10,10 @@ const apistore = useApiStore();
 
 <template>
   <section class="articles-section">
+    <div class="header">
+      <span>Articles</span>
+      <div class="divider"></div>
+    </div>
     <div class="articles-container">
       <ul class="articles-grid">
         <li
@@ -94,6 +98,22 @@ const apistore = useApiStore();
 .articles-section {
   min-height: 100vh;
   width: 100%;
+}
+.header {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 40px;
+}
+.divider{
+  border-top: 1px solid var(--color-text-secondary);
+  width: 62%;
+}
+.header span{
+  font-size: 30px;
+  font-weight: 600;
 }
 .articles-grid {
   list-style: none;

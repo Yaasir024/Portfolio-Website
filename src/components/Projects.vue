@@ -17,18 +17,25 @@ const projects = reactive([
     website: "https://appleclonebyyaasir.netlify.app/",
   },
   {
-    title: "Movies Search App",
+    title: "Hotel Landing Page",
     img: "konoha.PNG",
+    about: "A simple game made with Vue 3 Composition Api.",
+    github: "https://github.com/Yaasir024/konoha-hotel",
+    website: "https://konohahotel.netlify.app/",
+  },
+  {
+    title: "Movies Search App",
+    img: "moviesapp.PNG",
     about: "A simple game made with Vue 3 Composition Api.",
     github: "https://github.com/Yaasir024/MoviesApp",
     website: "https://moviezapp.netlify.app/",
   },
   {
-    title: "Hotel Landing Page",
-    img: "moviesapp.PNG",
+    title: "Baby Name Generator",
+    img: "namegenerator.PNG",
     about: "A simple game made with Vue 3 Composition Api.",
-    github: "https://github.com/Yaasir024/konoha-hotel",
-    website: "https://konohahotel.netlify.app/",
+    github: "https://github.com/Yaasir024/Baby-Name-Generator",
+    website: "https://baby-namesgenerator.netlify.app/",
   },
 ]);
 </script>
@@ -43,7 +50,7 @@ const projects = reactive([
       >
         <div class="card-content">
           <h3 class="project-title">
-            <a href="#" target="_blank">{{ project.title }}</a>
+            <a :href="`${project.website}`" target="_blank">{{ project.title }}</a>
           </h3>
           <div class="project-description">
             <p>
@@ -102,7 +109,7 @@ const projects = reactive([
         </div>
         <div class="project-image">
           <a :href="`${project.website}`">
-            <img :src="'/src/assets/projects/' + project.img" alt="" />
+            <img :src="'/src/assets/projects/' + project.img" :alt="`${project.title}` + ' by Yaasir'" />
           </a>
         </div>
       </li>
@@ -114,9 +121,6 @@ const projects = reactive([
 .projects-section {
   padding: 55px 12px;
   width: 100%;
-  /* position: sticky;
-  top: 0;
-  height: 100%; */
 }
 .projects-container {
   list-style: none;
@@ -125,20 +129,16 @@ const projects = reactive([
 }
 .project-card {
   position: relative;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(12, 1fr);
-  -webkit-box-align: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 75px;
 }
 .project-card .card-content {
-  grid-column: 1 / 9;
   position: relative;
-  grid-area: 1 / 1 / -1 / 9;
+  text-align: left;
 }
 .project-card:nth-of-type(2n + 1) .card-content {
-  grid-column: 5 / -1;
   text-align: right;
 }
 .project-title {
@@ -189,21 +189,12 @@ const projects = reactive([
 }
 
 .project-image {
-  /* box-shadow: 0 10px 30px -15px var(--navy-shadow); */
-  /* transition: var(--transition); */
-  grid-area: 1 / 6 / -1 / -1;
-  position: relative;
-  z-index: 1;
-}
-.project-card:nth-of-type(2n + 1) .project-image {
-  grid-column: 1 / 8;
-}
-.project-image {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: all 0.3s ease;
   background: beige;
+  width: 100%;
 }
 .project-image:hover {
   transform: scale(1.02);
@@ -217,6 +208,10 @@ const projects = reactive([
     filter: grayscale(100%) contrast(1); */
 }
 @media only screen and (max-width: 1150px) {
+  .projects-section {
+    padding: 55px 0px;
+    width: 100%;
+  }
   .projects-container {
     max-width: 820px;
     margin: 0 auto;
@@ -224,14 +219,34 @@ const projects = reactive([
   }
 }
 @media only screen and (max-width: 750px) {
-  .project-card .card-content {
-    grid-column: 1 / -1 !important;
-  }
-  .project-card .project-image {
-    grid-column: 1 / -1 !important;
-  }
-  .project-description {
-  background: transparent;
 }
+
+@media only screen and (min-width: 750px) {
+  .project-card {
+    position: relative;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 75px;
+  }
+  .project-card .card-content {
+    grid-column: 1 / 9;
+    position: relative;
+    grid-area: 1 / 1 / -1 / 9;
+  }
+  .project-card:nth-of-type(2n + 1) .card-content {
+    grid-column: 5 / -1;
+    text-align: right;
+  }
+  .project-image {
+    grid-area: 1 / 6 / -1 / -1;
+    position: relative;
+    z-index: 1;
+  }
+  .project-card:nth-of-type(2n + 1) .project-image {
+    grid-column: 1 / 8;
+  }
 }
 </style>

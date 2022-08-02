@@ -110,6 +110,7 @@ const apistore = useApiStore();
   justify-content: space-between;
   height: 100%;
   transition: all 0.3s ease;
+  min-height: 60px;
 }
 .article-inner:hover {
   transform: scale(1.02);

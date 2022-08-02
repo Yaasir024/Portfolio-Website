@@ -79,6 +79,12 @@ const apistore = useApiStore();
             </div>
           </div>
         </li>
+        <li
+          class="article-card"
+        >
+          <div class="article-inner">
+          </div>
+        </li>
       </ul>
     </div>
   </section>
@@ -110,7 +116,7 @@ const apistore = useApiStore();
   justify-content: space-between;
   height: 100%;
   transition: all 0.3s ease;
-  min-height: 60px;
+  min-height: 260px;
 }
 .article-inner:hover {
   transform: scale(1.02);

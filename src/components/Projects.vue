@@ -42,6 +42,9 @@ const projects = reactive([
 
 <template>
   <section class="projects-section">
+    <div class="header">
+      <span>Personal Projects</span>
+    </div>
     <ul class="projects-container">
       <li
         class="project-card"
@@ -121,6 +124,9 @@ const projects = reactive([
 .projects-section {
   padding: 55px 12px;
   width: 100%;
+}
+.header {
+  margin-bottom: 20px;
 }
 .projects-container {
   list-style: none;

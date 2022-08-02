@@ -31,7 +31,7 @@ import Articles from "../components/Articles.vue";
 .main-content {
   background: var(--color-background);
   min-height: 100vh;
-  padding: 55px 12px;
+  padding: 0 12px;
 }
 /* .sticky {
   position: sticky;
@@ -51,5 +51,10 @@ import Articles from "../components/Articles.vue";
     width: 60%;
     margin-left: 40%;
   }
+  .main-content {
+  background: var(--color-background);
+  min-height: 100vh;
+  padding: 55px 12px;
+}
 }
 </style>

@@ -2,6 +2,7 @@
 import Hero from "../components/Hero.vue";
 import Projects from "../components/Projects.vue";
 import Articles from "../components/Articles.vue";
+import Cta from "../components/Cta.vue";
 </script>
 
 <template>
@@ -12,8 +13,8 @@ import Articles from "../components/Articles.vue";
     <main class="main-content">
       <Projects />
         <Articles />
-      <div class="articles sticky">
-      </div>
+        <Cta />
+      
     </main>
   </div>
 </template>
@@ -54,7 +55,7 @@ import Articles from "../components/Articles.vue";
   .main-content {
   background: var(--color-background);
   min-height: 100vh;
-  padding: 55px 12px;
+  padding: 15px 12px;
 }
 }
 </style>

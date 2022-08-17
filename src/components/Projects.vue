@@ -128,7 +128,7 @@ const projects = reactive([
 
 <style scoped>
 .projects-section {
-  padding: 55px 12px;
+  padding: 25px 12px;
   width: 100%;
 }
 .header {
@@ -142,6 +142,7 @@ const projects = reactive([
 .divider{
   border-top: 1px solid var(--color-text-secondary);
   width: 62%;
+  display: none;
 }
 .header span{
   font-size: 30px;
@@ -242,8 +243,14 @@ const projects = reactive([
     margin: 0 auto;
     padding: 0 25px;
   }
+  .divider{
+    display: block;
+  }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
+  .divider {
+    width: 52%;
+  }
 }
 
 @media only screen and (min-width: 750px) {
@@ -272,6 +279,11 @@ const projects = reactive([
   }
   .project-card:nth-of-type(2n + 1) .project-image {
     grid-column: 1 / 8;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .divider {
+    display: none;
   }
 }
 </style>

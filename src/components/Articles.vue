@@ -22,7 +22,7 @@ const apistore = useApiStore();
           :key="index"
         >
           <div class="article-inner">
-            <div class="header">
+            <div class="card-header">
               <p class="date">{{ post.dateAdded }}</p>
               <h3 class="title">
                 <a
@@ -83,12 +83,6 @@ const apistore = useApiStore();
             </div>
           </div>
         </li>
-        <li
-          class="article-card"
-        >
-          <div class="article-inner">
-          </div>
-        </li>
       </ul>
     </div>
   </section>
@@ -107,11 +101,12 @@ const apistore = useApiStore();
   position: relative;
   padding: 0 40px;
 }
-.divider{
+.divider {
   border-top: 1px solid var(--color-text-secondary);
   width: 62%;
+  display: none;
 }
-.header span{
+.header span {
   font-size: 30px;
   font-weight: 600;
 }
@@ -141,6 +136,9 @@ const apistore = useApiStore();
 .article-inner:hover {
   transform: scale(1.02);
 }
+.article-inner .card-header {
+
+}
 .date {
   margin-bottom: 10px;
 }
@@ -167,8 +165,8 @@ const apistore = useApiStore();
   cursor: pointer;
 }
 .footer a svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 @media only screen and (max-width: 1150px) {
   .articles-container {
@@ -176,19 +174,28 @@ const apistore = useApiStore();
     margin: 0 auto; */
     padding: 0 25px;
   }
-  .article-card{
+  .article-card {
     width: 33.33%;
     padding: 6px;
   }
+  .divider {
+    display: block;
+  }
 }
 @media only screen and (max-width: 850px) {
-  .article-card{
+  .article-card {
     width: 50%;
+  }
+  .divider {
+    width: 52%;
   }
 }
 @media only screen and (max-width: 600px) {
-  .article-card{
+  .article-card {
     width: 100%;
+  }
+  .divider {
+    display: none;
   }
 }
 </style>

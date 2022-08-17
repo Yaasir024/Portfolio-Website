@@ -11,6 +11,9 @@ import Cta from "../components/Cta.vue";
       <Hero />
     </div>
     <main class="main-content">
+      <section class="profile-section">
+        <img src="/assets/itachi.jpg" alt="Yaasir Falana" />
+      </section>
       <Projects />
       <Articles />
       <Cta />
@@ -33,6 +36,13 @@ import Cta from "../components/Cta.vue";
   background: var(--color-background);
   min-height: 100vh;
   padding: 0 12px;
+}
+.profile-section {
+  display: none;
+}
+.profile-section img {
+  width: 100%;
+  height: 100%;
 }
 footer {
   display: flex;
@@ -62,6 +72,14 @@ footer {
     background: var(--color-background);
     min-height: 100vh;
     padding: 15px 12px;
+  }
+  .profile-section {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+  footer {
+    display: none;
   }
 }
 </style>

@@ -28,6 +28,7 @@
     </div>
     <div class="bottom">
       <div class="social-links">
+        <img src="/assets/itachi.jpg" alt="Yaasir Falana">
         <a href="https://github.com/Yaasir024" target="_blank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -136,6 +137,12 @@
 .social-links {
   display: flex;
   align-items: center;
+}
+.social-links img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 .social-links a {
   margin-right: 10px;

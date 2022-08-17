@@ -15,9 +15,13 @@
         </p>
       </div>
       <nav>
-        <ul>
-          <li>Works</li>
-          <li>Projects</li>
+        <ul class="tech-list">
+          <li class="tech">HTML/CSS(SASS)</li>
+          <li class="tech">JavaScript (ES6+)</li>
+          <li class="tech">Vue.js</li>
+          <li class="tech">State Management</li>
+          <li class="tech">Figma</li>
+          <li class="tech">Tailwind</li>
         </ul>
       </nav>
     </div>
@@ -113,6 +117,12 @@
 .hero .top nav {
   margin-top: 72px;
 }
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+}
+
 .social-links {
   display: flex;
   align-items: center;

@@ -116,7 +116,7 @@ const projects = reactive([
         <div class="project-image">
           <a :href="`${project.website}`">
             <img
-              :src="'/src/assets/projects/' + project.img"
+              :src="'/assets/projects/' + project.img"
               :alt="`${project.title}` + ' by Yaasir'"
             />
           </a>

@@ -113,6 +113,14 @@
 .hero .top nav {
   margin-top: 72px;
 }
+.social-links {
+  display: flex;
+  align-items: center;
+
+}
+.social-links a  {
+  margin-right: 10px;
+}
 .social-links a svg {
   width: 24px;
   height: 24px;

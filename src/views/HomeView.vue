@@ -14,10 +14,8 @@ import Cta from "../components/Cta.vue";
       <Projects />
       <Articles />
       <Cta />
+      <footer>Designed by Yaasir Falana</footer>
     </main>
-    <footer>
-      Designed by Yaasir Falana
-    </footer>
   </div>
 </template>
 <style scoped>

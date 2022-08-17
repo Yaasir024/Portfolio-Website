@@ -94,7 +94,7 @@ const apistore = useApiStore();
   width: 100%;
 }
 .header {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;

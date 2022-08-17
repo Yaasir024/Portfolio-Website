@@ -14,7 +14,8 @@
           libraries. Innovative, creative and a great team player.
         </p>
       </div>
-      <nav>
+      <div class="stack">
+        <h3>Here are a few technologies I’ve been working with recently:</h3>
         <ul class="tech-list">
           <li class="tech">HTML/CSS(SASS)</li>
           <li class="tech">JavaScript (ES6+)</li>
@@ -23,7 +24,7 @@
           <li class="tech">Figma</li>
           <li class="tech">Tailwind</li>
         </ul>
-      </nav>
+      </div>
     </div>
     <div class="bottom">
       <div class="social-links">
@@ -66,10 +67,7 @@
             />
           </svg>
         </a>
-        <a
-          href="https://teckierite.hashnode.dev/"
-          target="_blank"
-        >
+        <a href="https://teckierite.hashnode.dev/" target="_blank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
@@ -83,7 +81,6 @@
           </svg>
         </a>
       </div>
-      <p>Twitter</p>
     </div>
   </div>
 </template>
@@ -114,21 +111,33 @@
   font-size: 14px;
   color: var(--color-text-secondary);
 }
-.hero .top nav {
-  margin-top: 72px;
+.hero .top .stack {
+  margin-top: 15px;
 }
-
+.stack h3 {
+  font-size: 16px;
+}
 .tech-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.tech {
+  flex: 0 0 50%;
+  margin-bottom: 0.7rem;
+}
+.tech::before {
+  content: "▹";
+  display: inline-block;
 }
 
 .social-links {
   display: flex;
   align-items: center;
-
 }
-.social-links a  {
+.social-links a {
   margin-right: 10px;
 }
 .social-links a svg {

@@ -12,10 +12,12 @@ import Cta from "../components/Cta.vue";
     </div>
     <main class="main-content">
       <Projects />
-        <Articles />
-        <Cta />
-      
+      <Articles />
+      <Cta />
     </main>
+    <footer>
+      Designed by Yaasir Falana
+    </footer>
   </div>
 </template>
 <style scoped>
@@ -53,9 +55,9 @@ import Cta from "../components/Cta.vue";
     margin-left: 40%;
   }
   .main-content {
-  background: var(--color-background);
-  min-height: 100vh;
-  padding: 15px 12px;
-}
+    background: var(--color-background);
+    min-height: 100vh;
+    padding: 15px 12px;
+  }
 }
 </style>

@@ -14,7 +14,7 @@ import Cta from "../components/Cta.vue";
       <Projects />
       <Articles />
       <Cta />
-      <footer>Designed by Yaasir Falana</footer>
+      <footer>Built with 💻 and ☕ by Yaasir Falana</footer>
     </main>
   </div>
 </template>
@@ -34,12 +34,18 @@ import Cta from "../components/Cta.vue";
   min-height: 100vh;
   padding: 0 12px;
 }
-/* .sticky {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100%;
-} */
+footer {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  min-height: 70px;
+  padding: 40px 15px;
+  text-align: center;
+}
 @media only screen and (min-width: 1150px) {
   .hero-section {
     width: 40%;
